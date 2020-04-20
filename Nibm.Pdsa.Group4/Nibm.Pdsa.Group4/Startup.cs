@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nibm.Pdsa.Group4.Models;
+using Nibm.Pdsa.Group4.Service;
 
 namespace Nibm.Pdsa.Group4
 {
@@ -31,8 +32,8 @@ namespace Nibm.Pdsa.Group4
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddDbContext<ApplicationContext>(option => option.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddDbContext<ApplicationContext>(option => option.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ShortestPath>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
