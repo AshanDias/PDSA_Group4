@@ -34,6 +34,9 @@ namespace Nibm.Pdsa.Group4
             });
             services.AddDbContext<ApplicationContext>(option => option.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ShortestPath>();
+            services.AddScoped<HashMapDistances>();
+            services.AddScoped<LocationService>();
+            services.AddScoped<MSTService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

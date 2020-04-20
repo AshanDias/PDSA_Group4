@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Nibm.Pdsa.Group4.Interface
@@ -9,8 +10,8 @@ namespace Nibm.Pdsa.Group4.Interface
     {
          int minDistance(int[] dist, bool[] sptSet);
 
-        string printSolution(int[] dist, int n, String[] branches);
+        StringBuilder printSolution(int[] dist, int n, string[] branches);
 
-        string dijkstra(int[][] graph, int src);
+        StringBuilder dijkstra(int[][] graph, int src);
     }
 }

@@ -2,7 +2,9 @@ D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcorea
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.runtimeconfig.json
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.runtimeconfig.dev.json
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.dll
-D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csprojAssemblyReference.cache
+D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.pdb
+D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.Views.dll
+D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.Views.pdb
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csproj.CoreCompileInputs.cache
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.RazorAssemblyInfo.cache
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.RazorAssemblyInfo.cs
@@ -23,10 +25,8 @@ D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcorea
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.RazorTargetAssemblyInfo.cache
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.RazorTargetAssemblyInfo.cs
-D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.pdb
-D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.Views.dll
-D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.Views.pdb
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.Views.pdb
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.dll
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.pdb
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csproj.CopyComplete
+D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csprojAssemblyReference.cache
