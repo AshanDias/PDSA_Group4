@@ -8,6 +8,10 @@ namespace Nibm.Pdsa.Group4.Service
 {
     public class HashMapDistances : IHashMapDistances
     {
+        public HashMapDistances()
+        {
+
+        }
         int V;
         string[] bran;
         public HashMapDistances(int Vs, string[] branches)

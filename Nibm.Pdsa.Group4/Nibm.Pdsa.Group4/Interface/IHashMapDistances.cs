@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Nibm.Pdsa.Group4.Interface
 {
-    interface IHashMapDistances
+     public interface IHashMapDistances
     {
         int minDistance(int[] dist, bool[] sptSet);
 

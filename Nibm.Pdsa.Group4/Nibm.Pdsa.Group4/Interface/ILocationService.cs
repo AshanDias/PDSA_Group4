@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Nibm.Pdsa.Group4.Interface
 {
-    interface ILocationService
+    public interface ILocationService
     {
-        string[][] PrintArray();
+        string[,] PrintArray();
 
         string findLocationBetweenCities(string f_city, string to_city);
 

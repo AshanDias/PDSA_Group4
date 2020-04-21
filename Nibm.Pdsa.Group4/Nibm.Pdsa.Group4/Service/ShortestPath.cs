@@ -9,14 +9,19 @@ namespace Nibm.Pdsa.Group4.Service
 {
     public class ShortestPath : IShortestPath
     {
-        int V;
-        string[] bran;
+        public ShortestPath()
+        {
+
+        }
+
+        private int V = 0;
+        string[] bran ;
         public ShortestPath(int Vs, string[] branches)
         {
             V = Vs;
             bran = branches;
         }
-        public StringBuilder dijkstra(int[][] graph, int src)
+        public async Task<StringBuilder> dijkstra(int[][] graph, int src)
         {
             int[] dist = new int[V]; // The output array. dist[i] will hold 
                                      // the shortest distance from src to i 
@@ -41,7 +46,7 @@ namespace Nibm.Pdsa.Group4.Service
                 // Pick the minimum distance vertex from the set of vertices 
                 // not yet processed. u is always equal to src in first 
                 // iteration. 
-                int u = minDistance(dist, sptSet);
+                int u =await minDistance(dist, sptSet);
 
                 // Mark the picked vertex as processed 
                 sptSet[u] = true;
@@ -60,10 +65,10 @@ namespace Nibm.Pdsa.Group4.Service
             }
 
             // print the constructed distance array 
-            return printSolution(dist, V, bran);
+            return await printSolution(dist, V, bran);
         }
 
-        public int minDistance(int[] dist, bool[] sptSet)
+        public async Task<int> minDistance(int[] dist, bool[] sptSet)
         {
             int min = int.MaxValue, min_index = -1;
 
@@ -77,7 +82,7 @@ namespace Nibm.Pdsa.Group4.Service
             return min_index;
         }
 
-        public StringBuilder printSolution(int[] dist, int n, string[] branches)
+        public async Task<StringBuilder> printSolution(int[] dist, int n, string[] branches)
         {
             StringBuilder output = new StringBuilder();
             Console.WriteLine("Distance from selected branch");

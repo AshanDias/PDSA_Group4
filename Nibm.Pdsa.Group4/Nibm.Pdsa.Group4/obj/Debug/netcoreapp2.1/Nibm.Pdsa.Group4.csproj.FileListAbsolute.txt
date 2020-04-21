@@ -29,4 +29,3 @@ D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcorea
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.dll
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.pdb
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csproj.CopyComplete
-D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csprojAssemblyReference.cache
