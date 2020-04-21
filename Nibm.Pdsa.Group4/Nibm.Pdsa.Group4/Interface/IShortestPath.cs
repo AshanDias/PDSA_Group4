@@ -12,6 +12,6 @@ namespace Nibm.Pdsa.Group4.Interface
 
         Task<StringBuilder> printSolution(int[] dist, int n, string[] branches);
 
-        Task<StringBuilder> dijkstra(int[][] graph, int src);
+        Task<StringBuilder> dijkstra(int[,] graph, int src);
     }
 }

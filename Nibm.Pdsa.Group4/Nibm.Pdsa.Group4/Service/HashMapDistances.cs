@@ -20,7 +20,7 @@ namespace Nibm.Pdsa.Group4.Service
             bran = branches;
         }
 
-        public Dictionary<string, int> dijkstra(int[][] graph, int src)
+        public List<KeyValuePair<string, int>> dijkstra(int[,] graph, int src)
         {
             int[] dist = new int[V]; // The output array. dist[i] will hold 
                                      // the shortest distance from src to i 
@@ -57,10 +57,10 @@ namespace Nibm.Pdsa.Group4.Service
                     // Update dist[v] only if is not in sptSet, there is an 
                     // edge from u to v, and total weight of path from src to 
                     // v through u is smaller than current value of dist[v] 
-                    if (!sptSet[v] && graph[u][v] != 0 &&
+                    if (!sptSet[v] && graph[u,v] != 0 &&
                             dist[u] != int.MaxValue &&
-                            dist[u] + graph[u][v] < dist[v])
-                        dist[v] = dist[u] + graph[u][v];
+                            dist[u] + graph[u,v] < dist[v])
+                        dist[v] = dist[u] + graph[u,v];
             }
 
             // print the constructed distance array 
@@ -81,14 +81,14 @@ namespace Nibm.Pdsa.Group4.Service
             return min_index;
         }
 
-        public Dictionary<string, int> printSolution(int[] dist, int n, string[] branches)
+        public List<KeyValuePair<string, int>> printSolution(int[] dist, int n, string[] branches)
         {
-            Dictionary<string, int> theThings = new Dictionary<string, int>();
+            List<KeyValuePair<string, int>> theThings = new List<KeyValuePair<string, int>>();
             
             for (int i = 0; i < V; i++)
             {
 
-                theThings.Add(branches[i], dist[i]);
+                theThings.Add(new KeyValuePair<string, int>(branches[i], dist[i]));
             }
 
             //do things to get the Map built

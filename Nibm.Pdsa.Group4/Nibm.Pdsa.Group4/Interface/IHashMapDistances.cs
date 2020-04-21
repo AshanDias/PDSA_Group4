@@ -9,8 +9,8 @@ namespace Nibm.Pdsa.Group4.Interface
     {
         int minDistance(int[] dist, bool[] sptSet);
 
-        Dictionary<string, int> printSolution(int[] dist, int n, string[] branches);
+        List<KeyValuePair<string, int>> printSolution(int[] dist, int n, string[] branches);
 
-        Dictionary<string, int> dijkstra(int[][] graph, int src);
+        List<KeyValuePair<string, int>> dijkstra(int[,] graph, int src);
     }
 }

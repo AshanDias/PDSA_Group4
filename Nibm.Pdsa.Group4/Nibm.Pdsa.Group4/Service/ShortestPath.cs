@@ -21,7 +21,7 @@ namespace Nibm.Pdsa.Group4.Service
             V = Vs;
             bran = branches;
         }
-        public async Task<StringBuilder> dijkstra(int[][] graph, int src)
+        public async Task<StringBuilder> dijkstra(int[,] graph, int src)
         {
             int[] dist = new int[V]; // The output array. dist[i] will hold 
                                      // the shortest distance from src to i 
@@ -58,10 +58,10 @@ namespace Nibm.Pdsa.Group4.Service
                     // Update dist[v] only if is not in sptSet, there is an 
                     // edge from u to v, and total weight of path from src to 
                     // v through u is smaller than current value of dist[v] 
-                    if (!sptSet[v] && graph[u][v] != 0 &&
+                    if (!sptSet[v] && graph[u,v] != 0 &&
                             dist[u] != int.MaxValue &&
-                            dist[u] + graph[u][v] < dist[v])
-                        dist[v] = dist[u] + graph[u][v];
+                            dist[u] + graph[u,v] < dist[v])
+                        dist[v] = dist[u] + graph[u,v];
             }
 
             // print the constructed distance array 
