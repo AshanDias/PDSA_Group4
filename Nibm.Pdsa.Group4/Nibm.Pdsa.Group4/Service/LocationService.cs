@@ -22,8 +22,8 @@ namespace Nibm.Pdsa.Group4.Service
         public string findLocationBetweenCities(string f_city, string to_city)
         {
             string result = "0";
-            var res = _applicationContext.Distance.Where(x => x.fromStationId ==Convert.ToInt32(f_city) && 
-                x.toStationId == Convert.ToInt32(to_city)).FirstOrDefault();
+            var res = _applicationContext.Distance.Where(x => x.fromStation ==f_city && 
+                x.toStation == to_city).FirstOrDefault();
             if (res != null)
             {
                 result = res.DistanceKm.ToString();
@@ -37,11 +37,11 @@ namespace Nibm.Pdsa.Group4.Service
             {
 
 
-                List<int> f_cities = new List<int>();
-                f_cities = _applicationContext.Distance.Select(x => x.fromStation.Id).ToList();
+                List<string> f_cities = new List<string>();
+                f_cities = _applicationContext.Distance.Select(x => x.fromStation).ToList();
 
 
-                int[] nameArr = new int[f_cities.Count()];
+                string[] nameArr = new string[f_cities.Count()];
                 nameArr = f_cities.ToArray();
                 List<string[]> aa = new List<string[]>();
 

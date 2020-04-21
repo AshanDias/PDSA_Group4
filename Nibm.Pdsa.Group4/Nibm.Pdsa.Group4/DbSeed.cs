@@ -25,10 +25,10 @@ namespace Nibm.Pdsa.Group4
             }
             if (!context.Distance.Any())
             {
-                context.Add(new Distance { Id = 1, fromStationId = 1, toStationId = 2, DistanceKm = 50 });
-                context.Add(new Distance { Id = 2, fromStationId = 2, toStationId = 3, DistanceKm = 80 });
-                context.Add(new Distance { Id = 3, fromStationId = 3, toStationId = 4, DistanceKm = 60 });
-                context.Add(new Distance { Id = 4, fromStationId = 1, toStationId = 4, DistanceKm = 100 });
+                context.Add(new Distance { Id = 1, fromStation = "Colombo", toStation = "Nuwara Eliya", DistanceKm = 50 });
+                context.Add(new Distance { Id = 2, fromStation = "Nuwara Eliya", toStation = "Galle", DistanceKm = 80 });
+                context.Add(new Distance { Id = 3, fromStation = "Galle", toStation = "Mirissa", DistanceKm = 60 });
+                context.Add(new Distance { Id = 4, fromStation = "Colombo", toStation = "Mirissa", DistanceKm = 100 });
                 context.SaveChanges();
             }
 

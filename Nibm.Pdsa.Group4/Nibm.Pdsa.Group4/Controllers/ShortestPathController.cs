@@ -111,7 +111,7 @@ namespace Nibm.Pdsa.Group4.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-             int index = findIndex(branches, "2");
+             int index = findIndex(branches, "Galle");
             return "value";
         }
 
