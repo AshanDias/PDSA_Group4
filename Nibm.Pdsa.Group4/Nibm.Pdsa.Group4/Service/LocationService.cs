@@ -38,7 +38,7 @@ namespace Nibm.Pdsa.Group4.Service
 
 
                 List<string> f_cities = new List<string>();
-                f_cities = _applicationContext.Distance.Select(x => x.fromStation).ToList();
+                f_cities = _applicationContext.Distance.Select(x => x.fromStation).Distinct().ToList();
 
 
                 string[] nameArr = new string[f_cities.Count()];

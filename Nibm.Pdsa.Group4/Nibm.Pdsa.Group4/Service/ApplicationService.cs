@@ -24,7 +24,7 @@ namespace Nibm.Pdsa.Group4.Service
 
         public  List<string> GetDistance()
         {
-            return _applicationContext.Distance.Select(x => x.fromStation).ToList();
+            return _applicationContext.Distance.Select(x => x.fromStation).Distinct().ToList();
         }
     }
 }

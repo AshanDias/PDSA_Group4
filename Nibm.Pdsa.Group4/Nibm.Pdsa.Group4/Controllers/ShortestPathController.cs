@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Nibm.Pdsa.Group4.Interface;
 using Nibm.Pdsa.Group4.Service;
+using System.Linq;
 
 namespace Nibm.Pdsa.Group4.Controllers
 {
@@ -116,6 +117,8 @@ namespace Nibm.Pdsa.Group4.Controllers
             StringBuilder stringBuilder= await _shortestPath.dijkstra(arr, index);
 
             List <KeyValuePair<string, int>> data = _hashMapDistances.dijkstra(arr, index);
+
+            var daa = data.Where(x => x.Key == "Mirissa").FirstOrDefault();
             return data;
         }
 

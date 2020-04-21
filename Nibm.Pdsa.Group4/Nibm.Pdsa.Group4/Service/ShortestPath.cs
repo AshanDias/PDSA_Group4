@@ -85,8 +85,8 @@ namespace Nibm.Pdsa.Group4.Service
         public async Task<StringBuilder> printSolution(int[] dist, int n, string[] branches)
         {
             StringBuilder output = new StringBuilder();
-            Console.WriteLine("Distance from selected branch");
-            for (int i = 0; i < V; i++)
+           
+            for (int i = 0; i < branches.Length; i++)
             {
                 output.Append(branches[i] + " Distance " + dist[i] + "\n");
             }

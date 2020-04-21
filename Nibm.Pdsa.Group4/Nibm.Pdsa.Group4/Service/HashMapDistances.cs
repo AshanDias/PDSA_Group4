@@ -85,7 +85,7 @@ namespace Nibm.Pdsa.Group4.Service
         {
             List<KeyValuePair<string, int>> theThings = new List<KeyValuePair<string, int>>();
             
-            for (int i = 0; i < V; i++)
+            for (int i = 0; i < branches.Length; i++)
             {
 
                 theThings.Add(new KeyValuePair<string, int>(branches[i], dist[i]));
