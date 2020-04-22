@@ -22,9 +22,9 @@ namespace Nibm.Pdsa.Group4.Controllers
         }
         // GET: api/Station
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Station> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _applicationService.GetAllStations();
         }
 
         // GET: api/Station/5

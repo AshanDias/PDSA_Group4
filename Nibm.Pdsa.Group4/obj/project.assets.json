@@ -12618,11 +12618,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\PDSA\\PDSA_Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4.csproj",
+      "projectUniqueName": "D:\\Project\\PDSA\\PDSA_Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4.csproj",
       "projectName": "Nibm.Pdsa.Group4",
-      "projectPath": "D:\\Project\\PDSA\\PDSA_Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4.csproj",
+      "projectPath": "D:\\Project\\PDSA\\PDSA_Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4.csproj",
       "packagesPath": "C:\\Users\\AshanDias\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\PDSA\\PDSA_Group4\\Nibm.Pdsa.Group4\\Nibm.Pdsa.Group4\\obj\\",
+      "outputPath": "D:\\Project\\PDSA\\PDSA_Group4\\Nibm.Pdsa.Group4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

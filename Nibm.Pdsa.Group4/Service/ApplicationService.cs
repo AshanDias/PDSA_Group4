@@ -66,5 +66,15 @@ namespace Nibm.Pdsa.Group4.Service
             }
 
         }
+
+        public List<Distance> GetAllDistance()
+        {
+           return _applicationContext.Distance.ToList();
+        }
+
+        public List<Station> GetAllStations()
+        {
+            return _applicationContext.Station.ToList();
+        }
     }
 }

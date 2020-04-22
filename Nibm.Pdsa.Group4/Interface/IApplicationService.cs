@@ -15,5 +15,7 @@ namespace Nibm.Pdsa.Group4.Interface
         int SaveStation(Station station);
         int UpdateStation(Station station);
         int DeleteStation(int id);
+        List<Distance> GetAllDistance();
+        List<Station> GetAllStations();
     }
 }
