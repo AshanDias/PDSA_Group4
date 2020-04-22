@@ -9,6 +9,10 @@ namespace Nibm.Pdsa.Group4.Service
 {
     public class LocationService : ILocationService
     {
+        public LocationService()
+        {
+
+        }
         public ApplicationContext _applicationContext;
         public LocationService(ApplicationContext applicationContext)
         {
@@ -17,32 +21,48 @@ namespace Nibm.Pdsa.Group4.Service
 
         public string findLocationBetweenCities(string f_city, string to_city)
         {
-            return _applicationContext.Distance.Where(x => x.fromStationId ==Convert.ToInt32(f_city) && 
-                x.toStationId == Convert.ToInt32(to_city)).FirstOrDefault().DistanceKm.ToString();
+            string result = "0";
+            var res = _applicationContext.Distance.Where(x => x.fromStation ==f_city && 
+                x.toStation == to_city).FirstOrDefault();
+            if (res != null)
+            {
+                result = res.DistanceKm.ToString();
+            }
+            return result;
         }
 
-        public string[][] PrintArray()
+        public string[,] PrintArray()
         {
-            List<string> f_cities = new List<string>();
-            f_cities = _applicationContext.Distance.Select(x => x.fromStation.Name).ToList();
-
-
-            string[] nameArr = new string[f_cities.Count()];
-            nameArr = f_cities.ToArray();
-            List<string[]> aa = new List<string[]>();
-
-            string[][] shades = new string[nameArr.Length][];
-            for (int i = 0; i < nameArr.Length; i++)
+            try
             {
-                for (int y = 0; y < nameArr.Length; y++)
-                {
-                    shades[i][y] = findLocationBetweenCities(nameArr[i], nameArr[y]);
-                    //System.out.println(find_location_between_cities(nameArr[i], nameArr[y]));
-                }
-            }
 
-            //     return graph;
-            return shades;
+
+                List<string> f_cities = new List<string>();
+                f_cities = _applicationContext.Distance.Select(x => x.fromStation).Distinct().ToList();
+
+
+                string[] nameArr = new string[f_cities.Count()];
+                nameArr = f_cities.ToArray();
+                List<string[]> aa = new List<string[]>();
+
+                string[,] shades = new string[nameArr.Length, nameArr.Length];
+               
+                for (int i = 0; i < nameArr.Length; i++)
+                {
+                    for (int y = 0; y < nameArr.Length; y++)
+                    {
+                        shades[i,y] = findLocationBetweenCities(nameArr[i].ToString(), nameArr[y].ToString());
+                        //System.out.println(find_location_between_cities(nameArr[i], nameArr[y]));
+                    }
+                }
+
+                //     return graph;
+                return shades;
+            }catch(Exception ex)
+            {
+
+            }
+            return null;
         }
     }
 }

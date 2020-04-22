@@ -13,7 +13,8 @@ namespace Nibm.Pdsa.Group4.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099");
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Nibm.Pdsa.Group4.Models.Distance", b =>
                 {
@@ -22,15 +23,11 @@ namespace Nibm.Pdsa.Group4.Migrations
 
                     b.Property<int>("DistanceKm");
 
-                    b.Property<int>("fromStationId");
+                    b.Property<string>("fromStation");
 
-                    b.Property<int>("toStationId");
+                    b.Property<string>("toStation");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("fromStationId");
-
-                    b.HasIndex("toStationId");
 
                     b.ToTable("Distance");
                 });
@@ -45,19 +42,6 @@ namespace Nibm.Pdsa.Group4.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Station");
-                });
-
-            modelBuilder.Entity("Nibm.Pdsa.Group4.Models.Distance", b =>
-                {
-                    b.HasOne("Nibm.Pdsa.Group4.Models.Station", "fromStation")
-                        .WithMany()
-                        .HasForeignKey("fromStationId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Nibm.Pdsa.Group4.Models.Station", "toStation")
-                        .WithMany()
-                        .HasForeignKey("toStationId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

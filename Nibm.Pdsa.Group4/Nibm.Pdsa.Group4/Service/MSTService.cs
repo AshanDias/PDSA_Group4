@@ -8,6 +8,11 @@ namespace Nibm.Pdsa.Group4.Service
 {
     public class MSTService : IMSTService
     {
+
+        public MSTService()
+        {
+                
+        }
         private int V;
         string[] bran;
 

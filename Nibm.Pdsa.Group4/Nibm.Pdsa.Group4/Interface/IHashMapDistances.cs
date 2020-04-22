@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Nibm.Pdsa.Group4.Interface
 {
-    interface IHashMapDistances
+     public interface IHashMapDistances
     {
         int minDistance(int[] dist, bool[] sptSet);
 
-        Dictionary<string, int> printSolution(int[] dist, int n, string[] branches);
+        List<KeyValuePair<string, int>> printSolution(int[] dist, int n, string[] branches);
 
-        Dictionary<string, int> dijkstra(int[][] graph, int src);
+        List<KeyValuePair<string, int>> dijkstra(int[,] graph, int src);
     }
 }
