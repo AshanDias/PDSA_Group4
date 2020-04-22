@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Nibm.Pdsa.Group4.Interface;
+using Nibm.Pdsa.Group4.Models;
 
 namespace Nibm.Pdsa.Group4.Controllers
 {
@@ -11,6 +13,11 @@ namespace Nibm.Pdsa.Group4.Controllers
     [ApiController]
     public class DistanceController : ControllerBase
     {
+        private readonly IApplicationService _applicationService;
+        public DistanceController(IApplicationService applicationService)
+        {
+            _applicationService = applicationService;
+        }
         // GET: api/Distance
         [HttpGet]
         public IEnumerable<string> Get()
@@ -27,8 +34,10 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // POST: api/Distance
         [HttpPost]
-        public void Post([FromBody] string value)
+        public  int Post(Distance distance)
         {
+           return  _applicationService.SaveDistance(distance);
+
         }
 
         // PUT: api/Distance/5

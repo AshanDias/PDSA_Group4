@@ -22,9 +22,41 @@ namespace Nibm.Pdsa.Group4.Service
 
         }
 
+      
+
         public  List<string> GetDistance()
         {
             return _applicationContext.Distance.Select(x => x.fromStation).Distinct().ToList();
+        }
+
+        public  int SaveDistance(Distance distance)
+        {
+            _applicationContext.Distance.Add(distance);
+            _applicationContext.SaveChanges();
+            return 200;
+        }
+
+        public int SaveStation(Station station)
+        {
+            _applicationContext.Station.Add(station);
+            _applicationContext.SaveChanges();
+            return 200;
+        }
+
+        public int UpdateStation(Station station)
+        {
+            _applicationContext.Station.Update(station);
+            _applicationContext.SaveChanges();
+            return 200;
+        }
+
+        public int DeleteStation(int id)
+        {
+            Station station = _applicationContext.Station.Find(id);
+            _applicationContext.Station.Remove(station);
+            _applicationContext.SaveChanges();
+            return 200;
+
         }
     }
 }
