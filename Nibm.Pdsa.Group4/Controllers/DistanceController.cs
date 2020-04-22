@@ -20,9 +20,9 @@ namespace Nibm.Pdsa.Group4.Controllers
         }
         // GET: api/Distance
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Distance> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _applicationService.GetAllDistance();
         }
 
         // GET: api/Distance/5
