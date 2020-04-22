@@ -58,10 +58,12 @@ namespace Nibm.Pdsa.Group4.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public int Delete(int id)
+        [Route("Delete")]
+        [HttpPost]
+        public int Remove(Station stations)
         {
-            return _applicationService.DeleteStation(id); 
+            
+            return _applicationService.DeleteStation(stations.Id); 
         }
     }
 }
