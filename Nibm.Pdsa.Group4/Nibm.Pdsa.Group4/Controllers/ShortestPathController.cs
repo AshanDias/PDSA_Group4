@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Nibm.Pdsa.Group4.Interface;
 using Nibm.Pdsa.Group4.Service;
 using System.Linq;
+using Nibm.Pdsa.Group4.Models;
 
 namespace Nibm.Pdsa.Group4.Controllers
 {
@@ -111,22 +112,33 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // GET: api/ShortestPath/5
         [HttpGet("{id}")]
-        public async Task<List<KeyValuePair<string, int>>> Get(string id)
+        public async Task<KeyValuePair<string, int>> Get(string fromLocation,string toLocation)
         {
-             int index = findIndex(branches, id);
-            StringBuilder stringBuilder= await _shortestPath.dijkstra(arr, index);
 
-            List <KeyValuePair<string, int>> data = _hashMapDistances.dijkstra(arr, index);
+            int index = findIndex(branches, fromLocation);
+            StringBuilder stringBuilder = await _shortestPath.dijkstra(arr, index);
 
-            var daa = data.Where(x => x.Key == "Mirissa").FirstOrDefault();
-            return data;
+            List<KeyValuePair<string, int>> data = _hashMapDistances.dijkstra(arr, index);
+
+            var valuePair = data.Where(x => x.Key == toLocation).FirstOrDefault();
+
+
+            return valuePair;
         }
 
         // POST: api/ShortestPath
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<KeyValuePair<string, int>> Post(ShortestPathModel model)
         {
-           
+
+            int index = findIndex(branches, model.fromLocation);
+            StringBuilder stringBuilder = await _shortestPath.dijkstra(arr, index);
+
+            List<KeyValuePair<string, int>> data = _hashMapDistances.dijkstra(arr, index);
+
+            var valuePair = data.Where(x => x.Key == model.toLocation).FirstOrDefault();
+
+            return valuePair;
         }
 
         // PUT: api/ShortestPath/5
