@@ -128,7 +128,7 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // POST: api/ShortestPath
         [HttpPost]
-        public async Task<KeyValuePair<string, int>> Post(ShortestPathModel model)
+        public async Task<List<KeyValuePair<string, int>>> Post(ShortestPathModel model)
         {
 
             int index = findIndex(branches, model.fromLocation);
@@ -136,9 +136,9 @@ namespace Nibm.Pdsa.Group4.Controllers
 
             List<KeyValuePair<string, int>> data = _hashMapDistances.dijkstra(arr, index);
 
-            var valuePair = data.Where(x => x.Key == model.toLocation).FirstOrDefault();
+           // var valuePair = data.Where(x => x.Key == model.toLocation).FirstOrDefault();
 
-            return valuePair;
+            return data;
         }
 
         // PUT: api/ShortestPath/5

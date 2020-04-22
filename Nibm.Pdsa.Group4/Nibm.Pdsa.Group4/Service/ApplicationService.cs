@@ -53,9 +53,17 @@ namespace Nibm.Pdsa.Group4.Service
         public int DeleteStation(int id)
         {
             Station station = _applicationContext.Station.Find(id);
-            _applicationContext.Station.Remove(station);
-            _applicationContext.SaveChanges();
-            return 200;
+            if (station != null)
+            {
+                _applicationContext.Station.Remove(station);
+                _applicationContext.SaveChanges();
+                return 200;
+
+            }
+            else
+            {
+                return 500;
+            }
 
         }
     }
