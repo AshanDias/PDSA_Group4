@@ -57,7 +57,7 @@ namespace Nibm.Pdsa.Group4.Controllers
         {
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/Station/Delete
         [Route("Delete")]
         [HttpPost]
         public int Remove(Station stations)
