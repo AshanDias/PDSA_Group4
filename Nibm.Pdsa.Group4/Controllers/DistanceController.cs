@@ -36,7 +36,17 @@ namespace Nibm.Pdsa.Group4.Controllers
         [HttpPost]
         public  int Post(Distance distance)
         {
-           return  _applicationService.SaveDistance(distance);
+            if (distance.Id != 0)
+            {
+               return _applicationService.UpdateDistance(distance);
+                
+            }
+            else
+            {
+
+              return  _applicationService.SaveDistance(distance);
+            }
+          
 
         }
 
@@ -46,10 +56,13 @@ namespace Nibm.Pdsa.Group4.Controllers
         {
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE: api/Distance/Delete
+        [Route("Delete")]
+        [HttpPost]
+        public int Remove(Distance distance)
         {
+
+            return _applicationService.DeleteDistance(distance.Id);
         }
     }
 }

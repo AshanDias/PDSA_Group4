@@ -76,5 +76,29 @@ namespace Nibm.Pdsa.Group4.Service
         {
             return _applicationContext.Station.ToList();
         }
+
+        public int UpdateDistance(Distance distance)
+        {
+            _applicationContext.Distance.Update(distance);
+            _applicationContext.SaveChanges();
+            return 200;
+        }
+
+        public int DeleteDistance(int id)
+        {
+            Distance distance = _applicationContext.Distance.Find(id);
+            if (distance != null)
+            {
+                _applicationContext.Distance.Remove(distance);
+                _applicationContext.SaveChanges();
+                return 200;
+
+            }
+            else
+            {
+                return 500;
+            }
+
+        }
     }
 }

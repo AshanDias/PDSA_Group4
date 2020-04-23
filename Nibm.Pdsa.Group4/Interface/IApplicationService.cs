@@ -9,12 +9,16 @@ namespace Nibm.Pdsa.Group4.Interface
    public interface IApplicationService
     {
        List<string> GetDistance();
-
+        //distance
         int SaveDistance(Distance distance);
+        int UpdateDistance(Distance distance);
+        int DeleteDistance(int id);
 
+        //station
         int SaveStation(Station station);
         int UpdateStation(Station station);
         int DeleteStation(int id);
+
         List<Distance> GetAllDistance();
         List<Station> GetAllStations();
     }
