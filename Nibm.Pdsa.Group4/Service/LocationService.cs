@@ -33,9 +33,9 @@ namespace Nibm.Pdsa.Group4.Service
 
         public string[,] PrintArray()
         {
+           
             try
             {
-
 
                 List<string> f_cities = new List<string>();
                 f_cities = _applicationContext.Distance.Select(x => x.fromStation).Distinct().ToList();

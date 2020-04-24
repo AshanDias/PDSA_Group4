@@ -24,18 +24,21 @@ namespace Nibm.Pdsa.Group4.Controllers
         private readonly IHashMapDistances _hashMapDistances;
         private readonly ILocationService _locationService;
         private readonly IApplicationService _applicationService;
+        private readonly IMSTService _mSTService;
 
         string[] branches = null;
         string[,] ss = null;
 
-        public ShortestPathController(IShortestPath path, IHashMapDistances hash, ILocationService locationService, IApplicationService applicationService)
+        public ShortestPathController(IMSTService mSTService,IShortestPath path, IHashMapDistances hash, ILocationService locationService, IApplicationService applicationService)
         {
             _shortestPath = path;
             _hashMapDistances = hash;
             _locationService = locationService;
             _applicationService = applicationService;
-          
-            
+            _mSTService = mSTService;
+
+
+
             try
             {
                 branches = getArray();
@@ -139,8 +142,9 @@ namespace Nibm.Pdsa.Group4.Controllers
 
             List<KeyValuePair<string, int>> data = _hashMapDistances.dijkstra(arr, index);
 
-           // var valuePair = data.Where(x => x.Key == model.toLocation).FirstOrDefault();
-
+            // var valuePair = data.Where(x => x.Key == model.toLocation).FirstOrDefault();
+            _mSTService.primMST(arr,11);
+          
             return data;
         }
 

@@ -36,8 +36,9 @@ namespace Nibm.Pdsa.Group4.Service
             return min_index;
         }
 
-        public void primMST(int[][] graph)
+        public void primMST(int[,] graph,int size)
         {// Array to store constructed MST 
+            this.V = size;
             int[] parent = new int[V];
 
             // Key values used to pick minimum weight edge in cut 
@@ -76,11 +77,11 @@ namespace Nibm.Pdsa.Group4.Service
                     // graph[u][v] is non zero only for adjacent vertices of m 
                     // mstSet[v] is false for vertices not yet included in MST 
                     // Update the key only if graph[u][v] is smaller than key[v] 
-                    if (graph[u][v] != 0 && mstSet[v] == false &&
-                        graph[u][v] < key[v])
+                    if (graph[u,v] != 0 && mstSet[v] == false &&
+                        graph[u,v] < key[v])
                     {
                         parent[v] = u;
-                        key[v] = graph[u][v];
+                        key[v] = graph[u,v];
                     }
             }
 
@@ -89,12 +90,13 @@ namespace Nibm.Pdsa.Group4.Service
 
         }
 
-        public void printMST(int[] parent, int n, int[][] graph)
+        public void printMST(int[] parent, int n, int[,] graph)
         {
+
             Console.WriteLine("Edge \tWeight");
             for (int i = 1; i < V; i++)
                 Console.WriteLine(parent[i] + " - " + i + "\t" +
-                                graph[i][parent[i]]);
+                                graph[i,parent[i]]);
         }
     }
 }

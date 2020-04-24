@@ -31,3 +31,4 @@ D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.G
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csproj.CopyComplete
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\bin\Debug\netcoreapp2.1\Startup.cs
+D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Debug\netcoreapp2.1\Nibm.Pdsa.Group4.csprojAssemblyReference.cache
