@@ -62,7 +62,7 @@ namespace Nibm.Pdsa.Group4
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowOrigin",
-                    builder => builder.WithOrigins("http://pdsa-ui.azurewebsites.net"));
+                    builder => builder.WithOrigins("http://pdsa-ui.azurewebsites.net").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             });
         }
 
