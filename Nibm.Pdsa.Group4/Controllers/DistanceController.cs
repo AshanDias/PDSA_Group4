@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nibm.Pdsa.Group4.Interface;
@@ -20,6 +21,7 @@ namespace Nibm.Pdsa.Group4.Controllers
         }
         // GET: api/Distance
         [HttpGet]
+        [EnableCors("AllowOrigin")]
         public List<Distance> Get()
         {
             return _applicationService.GetAllDistance();
@@ -34,6 +36,7 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // POST: api/Distance
         [HttpPost]
+        [EnableCors("AllowOrigin")]
         public  int Post(Distance distance)
         {
             if (distance.Id != 0)
@@ -59,6 +62,7 @@ namespace Nibm.Pdsa.Group4.Controllers
         // DELETE: api/Distance/Delete
         [Route("Delete")]
         [HttpPost]
+        [EnableCors("AllowOrigin")]
         public int Remove(Distance distance)
         {
 

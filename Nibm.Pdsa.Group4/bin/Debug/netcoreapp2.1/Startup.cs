@@ -46,23 +46,14 @@ namespace Nibm.Pdsa.Group4
             services.AddDbContext<ApplicationContext>(option => option.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy(MyAllowSpecificOrigins,
-
-            //    //builder =>
-            //    //{
-            //    //    //builder.WithOrigins("http://pdsa-ui.azurewebsites.net",
-            //    //    //                    "https://pdsa-ui.azurewebsites.net");
-            //    //    //builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-
-            //    //});
-            //});
-
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowOrigin",
-                    builder => builder.WithOrigins("http://pdsa-ui.azurewebsites.net"));
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://pdsa-ui.azurewebsites.net",
+                                        "https://pdsa-ui.azurewebsites.net");
+                });
             });
         }
 
@@ -102,7 +93,7 @@ namespace Nibm.Pdsa.Group4
 
             //app.UseCors(option => option
             //.AllowAnyOrigin().AllowCredentials().AllowAnyHeader().AllowAnyMethod());
-            app.UseCors();
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseMvc();
         }
     }

@@ -31,3 +31,4 @@ D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Release\netcoreapp2.1\Nibm.Pdsa
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Release\netcoreapp2.1\Nibm.Pdsa.Group4.pdb
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Release\netcoreapp2.1\Nibm.Pdsa.Group4.csproj.CopyComplete
 D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\obj\Release\netcoreapp2.1\Nibm.Pdsa.Group4.csprojAssemblyReference.cache
+D:\Project\PDSA\PDSA_Group4\Nibm.Pdsa.Group4\bin\Release\netcoreapp2.1\Startup.cs
