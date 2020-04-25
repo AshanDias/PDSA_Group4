@@ -33,9 +33,9 @@ namespace Nibm.Pdsa.Group4.Service
 
         public string[,] PrintArray()
         {
-           
             try
             {
+
 
                 List<string> f_cities = new List<string>();
                 f_cities = _applicationContext.Distance.Select(x => x.fromStation).Distinct().ToList();
@@ -58,9 +58,11 @@ namespace Nibm.Pdsa.Group4.Service
 
                 //     return graph;
                 return shades;
-            }catch(Exception ex)
-            {
 
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Exception: {0}", ex);
             }
             return null;
         }
