@@ -24,6 +24,8 @@ namespace Nibm.Pdsa.Group4
 
         public IConfiguration Configuration { get; }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -44,7 +46,24 @@ namespace Nibm.Pdsa.Group4
             services.AddDbContext<ApplicationContext>(option => option.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddCors();
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(MyAllowSpecificOrigins,
+
+            //    //builder =>
+            //    //{
+            //    //    //builder.WithOrigins("http://pdsa-ui.azurewebsites.net",
+            //    //    //                    "https://pdsa-ui.azurewebsites.net");
+            //    //    //builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+
+            //    //});
+            //});
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin",
+                    builder => builder.WithOrigins("http://pdsa-ui.azurewebsites.net").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,13 +93,16 @@ namespace Nibm.Pdsa.Group4
              
                 // Seed the database.
             }
-            app.UseCors(options =>
-                     options.WithOrigins("http://localhost:8080")
-                     .AllowAnyMethod()
-                     .AllowAnyHeader());
 
+            //app.UseCors(options =>
+            //           options
+            //          .WithOrigins("https://pdsa-ui.azurewebsites.net")
+            //         .AllowAnyMethod()
+            //         .AllowAnyHeader().AllowAnyOrigin());
 
-            
+            //app.UseCors(option => option
+            //.AllowAnyOrigin().AllowCredentials().AllowAnyHeader().AllowAnyMethod());
+            app.UseCors();
             app.UseMvc();
         }
     }

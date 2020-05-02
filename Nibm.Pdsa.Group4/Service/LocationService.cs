@@ -52,15 +52,17 @@ namespace Nibm.Pdsa.Group4.Service
                     for (int y = 0; y < nameArr.Length; y++)
                     {
                         shades[i,y] = findLocationBetweenCities(nameArr[i].ToString(), nameArr[y].ToString());
-                        //System.out.println(find_location_between_cities(nameArr[i], nameArr[y]));
+                       
                     }
                 }
 
                 //     return graph;
                 return shades;
-            }catch(Exception ex)
-            {
 
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Exception: {0}", ex);
             }
             return null;
         }

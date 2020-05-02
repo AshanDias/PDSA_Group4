@@ -10,6 +10,8 @@ using Nibm.Pdsa.Group4.Interface;
 using Nibm.Pdsa.Group4.Service;
 using System.Linq;
 using Nibm.Pdsa.Group4.Models;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Cors;
 
 namespace Nibm.Pdsa.Group4.Controllers
 {
@@ -23,18 +25,21 @@ namespace Nibm.Pdsa.Group4.Controllers
         private readonly IHashMapDistances _hashMapDistances;
         private readonly ILocationService _locationService;
         private readonly IApplicationService _applicationService;
+        private readonly IMSTService _mSTService;
 
         string[] branches = null;
         string[,] ss = null;
 
-        public ShortestPathController(IShortestPath path, IHashMapDistances hash, ILocationService locationService, IApplicationService applicationService)
+        public ShortestPathController(IMSTService mSTService,IShortestPath path, IHashMapDistances hash, ILocationService locationService, IApplicationService applicationService)
         {
             _shortestPath = path;
             _hashMapDistances = hash;
             _locationService = locationService;
             _applicationService = applicationService;
-          
-            
+            _mSTService = mSTService;
+
+
+
             try
             {
                 branches = getArray();
@@ -43,31 +48,39 @@ namespace Nibm.Pdsa.Group4.Controllers
 
                 _hashMapDistances = new HashMapDistances(ss.GetLength(0), getArray());
             }
-            catch(Exception ex)
+            catch(OutOfMemoryException ex)
             {
-
+                Console.WriteLine("OutOfMemoryExeption: {0}", ex);
             }
 
             arr = new int[ss.GetLength(0), ss.GetLength(1)];
-            for (int i = 0; i < ss.GetLength(0); i++)
+
+            try
             {
-                for (int y = 0; y < ss.GetLength(1); y++)
+                for (int i = 0; i < ss.GetLength(0); i++)
                 {
-                    int val = 0;
-                    if (ss[i,y] != null)
+                    for (int y = 0; y < ss.GetLength(1); y++)
                     {
+                        int val = 0;
+                        if (ss[i, y] != null)
+                        {
 
-                        val = Convert.ToInt32(ss[i,y]);
-                    }
-                    else
-                    {
-                        val = 0;
-                    }
+                            val = Convert.ToInt32(ss[i, y]);
+                        }
+                        else
+                        {
+                            val = 0;
+                        }
 
-                    arr[i,y] = val;
+                        arr[i, y] = val;
+
+                    }
 
                 }
-
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error", ex);
             }
         }
 
@@ -112,6 +125,7 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // GET: api/ShortestPath/5
         [HttpGet("{id}")]
+        [EnableCors("AllowOrigin")]
         public async Task<KeyValuePair<string, int>> Get(string fromLocation,string toLocation)
         {
 
@@ -122,12 +136,14 @@ namespace Nibm.Pdsa.Group4.Controllers
 
             var valuePair = data.Where(x => x.Key == toLocation).FirstOrDefault();
 
+                _mSTService.primMST(arr, 11);
 
             return valuePair;
         }
 
         // POST: api/ShortestPath
         [HttpPost]
+        [EnableCors("AllowOrigin")]
         public async Task<List<KeyValuePair<string, int>>> Post(ShortestPathModel model)
         {
 

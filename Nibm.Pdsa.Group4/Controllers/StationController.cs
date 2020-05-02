@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nibm.Pdsa.Group4.Interface;
@@ -22,6 +23,7 @@ namespace Nibm.Pdsa.Group4.Controllers
         }
         // GET: api/Station
         [HttpGet]
+        [EnableCors("AllowOrigin")]
         public List<Station> Get()
         {
             return _applicationService.GetAllStations();
@@ -36,6 +38,7 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // POST: api/Station
         [HttpPost]
+        [EnableCors("AllowOrigin")]
         public int Post(Station stations)
         {
             if (stations.Id != 0)
@@ -60,6 +63,7 @@ namespace Nibm.Pdsa.Group4.Controllers
         // DELETE: api/Station/Delete
         [Route("Delete")]
         [HttpPost]
+        [EnableCors("AllowOrigin")]
         public int Remove(Station stations)
         {
             
