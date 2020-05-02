@@ -11,6 +11,7 @@ using Nibm.Pdsa.Group4.Service;
 using System.Linq;
 using Nibm.Pdsa.Group4.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Cors;
 
 namespace Nibm.Pdsa.Group4.Controllers
 {
@@ -124,6 +125,7 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // GET: api/ShortestPath/5
         [HttpGet("{id}")]
+        [EnableCors("AllowOrigin")]
         public async Task<KeyValuePair<string, int>> Get(string fromLocation,string toLocation)
         {
 
@@ -141,6 +143,7 @@ namespace Nibm.Pdsa.Group4.Controllers
 
         // POST: api/ShortestPath
         [HttpPost]
+        [EnableCors("AllowOrigin")]
         public async Task<List<KeyValuePair<string, int>>> Post(ShortestPathModel model)
         {
 
